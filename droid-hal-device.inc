@@ -879,6 +879,8 @@ mv $RPM_BUILD_ROOT/lib/modules/* $RPM_BUILD_ROOT/lib/modules/$kernel_release || 
 # rpm2cpio mostly anyhow
 %if 0%{!?have_custom_img_boot:1}
 cp out/target/product/%{device}/hybris-boot.img $RPM_BUILD_ROOT/boot/
+# edp17 copy kernel file too
+cp out/target/product/%{device}/kernel $RPM_BUILD_ROOT/boot/
 %endif
 
 %if 0%{!?have_custom_img_recovery:1}
@@ -1058,6 +1060,7 @@ done
 %files img-boot
 %defattr(644,root,root,-)
 /boot/hybris-boot.img
+/boot/kernel
 %if 0%{?installable_zip:1}
 /boot/update-binary
 /boot/hybris-updater-script
