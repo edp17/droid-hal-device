@@ -12,7 +12,7 @@ SRCS+= sha.c
 SRCS+= sha256.c
 
 CPPFLAGS+= -I.
-CPPFLAGS+= -I../include
+CPPFLAGS+= -I../include -std=gnu99
 
 #LIBS+=
 
